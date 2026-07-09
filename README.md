@@ -6,11 +6,15 @@ with high-efficiency power electronics.
 ## Structure
 
 ```
-index.html            Landing page (hero, technology, how it works, applications, contact)
+index.html            Landing page (hero, technology, applications, news, contact)
 team.html             Team page (CEO, CTO, Advisor)
 assets/css/style.css  All styling (brand colors defined in :root at the top)
 assets/js/main.js     Nav behavior + scroll animations
-assets/img/           Logo and team photos
+assets/img/           Favicon and sponsor logos
+cosinelogo.svg        Nav logo
+Team/                 Team headshots
+News/                 News section photos
+Sponsors/             Original sponsor logo files
 ```
 
 ## Things to customize
