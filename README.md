@@ -14,10 +14,8 @@ team/index.html          Team page -> /team/
 team.html                Redirect for the old /team.html URL
 assets/css/style.css     All styling (brand colors defined in :root at the top)
 assets/js/main.js        Nav behavior + scroll animations
-assets/img/              Favicon and sponsor logos
+assets/img/              Favicon, sponsor logos, team headshots, news photos
 cosinelogo.svg           Nav logo
-Team/                    Team headshots
-News/                    News photos
 Sponsors/                Original sponsor logo files
 ```
 
