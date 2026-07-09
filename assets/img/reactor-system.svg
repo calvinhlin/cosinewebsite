@@ -1,0 +1,129 @@
+<svg viewBox="0 0 1180 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="rsTitle rsDesc">
+  <title id="rsTitle">Cosine system diagram</title>
+  <desc id="rsDesc">Grid or renewable electricity flows into a high-efficiency power electronics converter, which drives an induction coil wrapped around an inductively heated thermochemical reactor. Reactants enter the reactor and products exit the top.</desc>
+
+  <defs>
+    <linearGradient id="hotZone" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#ffb454" stop-opacity="0.50"/>
+      <stop offset="0.7" stop-color="#ffb454" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffb454" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="coreGlow" cx="0.5" cy="0.6" r="0.55">
+      <stop offset="0" stop-color="#ffb454" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#ffb454" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#7fd8a0"/>
+    </marker>
+    <marker id="arrowWhite" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e8f5ec"/>
+    </marker>
+  </defs>
+
+  <style>
+    .lbl { font-family: 'Space Grotesk', 'Inter', 'Segoe UI', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.14em; fill: #8fd6a8; }
+    .lbl-dim { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 14.5px; font-weight: 500; letter-spacing: 0.06em; fill: rgba(232, 245, 236, 0.82); }
+    .wire { stroke: rgba(232, 245, 236, 0.4); stroke-width: 2; fill: none; }
+    .trace { stroke: rgba(232, 245, 236, 0.35); stroke-width: 1.6; fill: none; }
+    .comp { fill: rgba(232, 245, 236, 0.06); stroke: rgba(232, 245, 236, 0.65); stroke-width: 2; }
+  </style>
+
+  <!-- ============ input: grid / renewable electricity ============ -->
+  <text class="lbl" x="80" y="180" text-anchor="middle" style="font-size: 14px;">
+    <tspan x="80">CLEAN</tspan>
+    <tspan x="80" dy="21">ELECTRICITY</tspan>
+  </text>
+  <path d="M24 250 q 15 -30 30 0 t 30 0 t 30 0 t 30 0" stroke="#7fd8a0" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrowGreen)"/>
+
+  <!-- ============ power electronics converter ============ -->
+  <!-- heatsink fins -->
+  <g fill="rgba(232,245,236,0.35)">
+    <rect x="180" y="116" width="13" height="34" rx="3"/>
+    <rect x="211" y="116" width="13" height="34" rx="3"/>
+    <rect x="242" y="116" width="13" height="34" rx="3"/>
+    <rect x="273" y="116" width="13" height="34" rx="3"/>
+    <rect x="304" y="116" width="13" height="34" rx="3"/>
+    <rect x="335" y="116" width="13" height="34" rx="3"/>
+    <rect x="366" y="116" width="13" height="34" rx="3"/>
+    <rect x="397" y="116" width="13" height="34" rx="3"/>
+  </g>
+  <!-- enclosure -->
+  <rect x="150" y="150" width="290" height="200" rx="18" fill="rgba(232,245,236,0.045)" stroke="#7fd8a0" stroke-width="2.5"/>
+  <!-- components: capacitors -->
+  <circle class="comp" cx="212" cy="212" r="17"/>
+  <circle class="comp" cx="266" cy="212" r="17"/>
+  <!-- inductor -->
+  <path class="trace" d="M310 212 a 9 9 0 0 1 18 0 a 9 9 0 0 1 18 0 a 9 9 0 0 1 18 0" stroke="rgba(232,245,236,0.65)" stroke-width="2.2"/>
+  <!-- switching devices -->
+  <g>
+    <rect class="comp" x="188" y="252" width="48" height="58" rx="6"/>
+    <rect class="comp" x="256" y="252" width="48" height="58" rx="6"/>
+    <rect class="comp" x="324" y="252" width="48" height="58" rx="6"/>
+    <g stroke="rgba(232,245,236,0.5)" stroke-width="2">
+      <line x1="198" y1="310" x2="198" y2="322"/><line x1="212" y1="310" x2="212" y2="322"/><line x1="226" y1="310" x2="226" y2="322"/>
+      <line x1="266" y1="310" x2="266" y2="322"/><line x1="280" y1="310" x2="280" y2="322"/><line x1="294" y1="310" x2="294" y2="322"/>
+      <line x1="334" y1="310" x2="334" y2="322"/><line x1="348" y1="310" x2="348" y2="322"/><line x1="362" y1="310" x2="362" y2="322"/>
+    </g>
+  </g>
+  <!-- traces -->
+  <path class="trace" d="M229 212 L249 212"/>
+  <path class="trace" d="M283 212 L310 212"/>
+  <text class="lbl" x="295" y="392" text-anchor="middle">HIGH-EFFICIENCY POWER ELECTRONICS</text>
+
+  <!-- ============ high-frequency link to coil ============ -->
+  <line class="wire" x1="440" y1="215" x2="745" y2="215"/>
+  <line class="wire" x1="440" y1="305" x2="745" y2="305"/>
+  <text class="lbl-dim" x="575" y="245" text-anchor="middle">HIGH-FREQUENCY AC</text>
+  <path d="M505 268 q 9 -22 18 0 t 18 0 t 18 0 t 18 0 t 18 0 t 18 0 t 18 0" stroke="#7fd8a0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- ============ reactor: coil back strands (behind vessel) ============ -->
+  <g stroke="#0d7a32" stroke-width="5" fill="none" opacity="0.45" stroke-linecap="round">
+    <path d="M745 170 Q850 148 955 170"/>
+    <path d="M745 215 Q850 193 955 215"/>
+    <path d="M745 260 Q850 238 955 260"/>
+    <path d="M745 305 Q850 283 955 305"/>
+    <path d="M745 350 Q850 328 955 350"/>
+  </g>
+
+  <!-- ============ reactor vessel ============ -->
+  <rect x="775" y="90" width="150" height="330" rx="30" fill="rgba(232,245,236,0.035)" stroke="rgba(232,245,236,0.75)" stroke-width="2.5"/>
+  <ellipse cx="850" cy="285" rx="120" ry="110" fill="url(#coreGlow)"/>
+  <rect x="789" y="140" width="122" height="242" rx="22" fill="url(#hotZone)"/>
+  <!-- catalyst bed -->
+  <g>
+    <circle cx="818" cy="345" r="7" fill="#ffcf87" opacity="0.95"/>
+    <circle cx="843" cy="356" r="6" fill="#ff9f43" opacity="0.9"/>
+    <circle cx="870" cy="348" r="7" fill="#ffcf87" opacity="0.95"/>
+    <circle cx="893" cy="357" r="5.5" fill="#ff9f43" opacity="0.9"/>
+    <circle cx="828" cy="318" r="6" fill="#ff9f43" opacity="0.9"/>
+    <circle cx="856" cy="325" r="7" fill="#ffcf87" opacity="0.95"/>
+    <circle cx="884" cy="320" r="6" fill="#ffcf87" opacity="0.9"/>
+    <circle cx="820" cy="290" r="5.5" fill="#ffcf87" opacity="0.85"/>
+    <circle cx="848" cy="295" r="6" fill="#ff9f43" opacity="0.85"/>
+    <circle cx="877" cy="292" r="5.5" fill="#ffcf87" opacity="0.85"/>
+    <circle cx="835" cy="264" r="5" fill="#ffcf87" opacity="0.7"/>
+    <circle cx="866" cy="262" r="5" fill="#ff9f43" opacity="0.7"/>
+  </g>
+
+  <!-- ============ coil front strands ============ -->
+  <g stroke="#169e43" stroke-width="7" fill="none" stroke-linecap="round">
+    <path d="M745 170 Q850 192 955 170"/>
+    <path d="M745 215 Q850 237 955 215"/>
+    <path d="M745 260 Q850 282 955 260"/>
+    <path d="M745 305 Q850 327 955 305"/>
+    <path d="M745 350 Q850 372 955 350"/>
+  </g>
+
+  <!-- ============ flows ============ -->
+  <line x1="850" y1="82" x2="850" y2="46" stroke="#e8f5ec" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowWhite)"/>
+  <text class="lbl-dim" x="874" y="60" text-anchor="start">PRODUCTS OUT</text>
+  <path d="M652 388 L768 388" stroke="#e8f5ec" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowWhite)"/>
+  <text class="lbl-dim" x="652" y="370" text-anchor="start">REACTANTS IN</text>
+  <text class="lbl" x="850" y="454" text-anchor="middle">INDUCTIVELY HEATED REACTOR</text>
+
+  <!-- induction field hint inside coil -->
+  <g stroke="rgba(232,245,236,0.28)" stroke-width="1.6" stroke-dasharray="3 7" fill="none">
+    <line x1="812" y1="160" x2="812" y2="240"/>
+    <line x1="888" y1="160" x2="888" y2="240"/>
+  </g>
+</svg>
