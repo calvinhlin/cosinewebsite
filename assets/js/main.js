@@ -36,6 +36,15 @@ const observer = new IntersectionObserver(
 );
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
+// Re-anchor after all assets load: late-loading images and fonts shift
+// layout, which strands a direct #hash visit at the wrong scroll position
+window.addEventListener("load", () => {
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target) target.scrollIntoView({ behavior: "auto" });
+  }
+});
+
 // Footer year
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();

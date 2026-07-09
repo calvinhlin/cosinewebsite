@@ -6,16 +6,24 @@ with high-efficiency power electronics.
 ## Structure
 
 ```
-index.html            Landing page (hero, technology, applications, news, contact)
-team.html             Team page (CEO, CTO, Advisor)
-assets/css/style.css  All styling (brand colors defined in :root at the top)
-assets/js/main.js     Nav behavior + scroll animations
-assets/img/           Favicon and sponsor logos
-cosinelogo.svg        Nav logo
-Team/                 Team headshots
-News/                 News section photos
-Sponsors/             Original sponsor logo files
+index.html               Home (hero, stats, contact CTA, sponsors)
+technology/index.html    Technology page  -> cosine-energy.com/technology/
+applications/index.html  Applications page -> /applications/
+news/index.html          News page -> /news/
+team/index.html          Team page -> /team/
+team.html                Redirect for the old /team.html URL
+assets/css/style.css     All styling (brand colors defined in :root at the top)
+assets/js/main.js        Nav behavior + scroll animations
+assets/img/              Favicon and sponsor logos
+cosinelogo.svg           Nav logo
+Team/                    Team headshots
+News/                    News photos
+Sponsors/                Original sponsor logo files
 ```
+
+Each page lives in its own folder so URLs stay clean (no `.html`, no `#`).
+All asset and link paths are absolute (`/assets/...`), which assumes the site
+is served from the domain root (true for cosine-energy.com).
 
 ## Things to customize
 
