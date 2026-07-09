@@ -278,11 +278,12 @@ h1, h2, h3, h4 {
 @keyframes drawWave { to { stroke-dashoffset: 0; } }
 .hero-wave .molecule {
   opacity: 0;
-  animation: molIn 0.9s ease forwards;
+  animation: molIn 0.45s ease forwards;
 }
-.hero-wave .molecule.m1 { animation-delay: 1.5s; }
-.hero-wave .molecule.m2 { animation-delay: 1.9s; }
-.hero-wave .molecule.m3 { animation-delay: 2.3s; }
+/* delays track the wave's drawing edge as it sweeps left to right */
+.hero-wave .molecule.m1 { animation-delay: 0.8s; }
+.hero-wave .molecule.m2 { animation-delay: 1.35s; }
+.hero-wave .molecule.m3 { animation-delay: 1.75s; }
 @keyframes molIn { to { opacity: 0.9; } }
 
 /* ---------- stat strip ---------- */
