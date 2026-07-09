@@ -57,12 +57,16 @@ h1, h2, h3, h4 {
 
 /* ---------- text wordmark (matches logo: green “s”) ---------- */
 .wordmark {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--ink);
 }
-.wordmark .s { color: var(--green); }
+.wordmark .s {
+  color: var(--green);
+  display: inline-block;
+  transform: scaleX(-1);
+}
 .on-dark .wordmark { color: #fff; }
 
 /* ---------- eyebrow labels ---------- */
