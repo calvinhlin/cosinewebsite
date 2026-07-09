@@ -276,6 +276,14 @@ h1, h2, h3, h4 {
   animation: drawWave 2.6s cubic-bezier(0.6, 0, 0.2, 1) 0.3s forwards;
 }
 @keyframes drawWave { to { stroke-dashoffset: 0; } }
+.hero-wave .molecule {
+  opacity: 0;
+  animation: molIn 0.9s ease forwards;
+}
+.hero-wave .molecule.m1 { animation-delay: 1.5s; }
+.hero-wave .molecule.m2 { animation-delay: 1.9s; }
+.hero-wave .molecule.m3 { animation-delay: 2.3s; }
+@keyframes molIn { to { opacity: 0.9; } }
 
 /* ---------- stat strip ---------- */
 .stats {
@@ -705,6 +713,7 @@ section { padding: 110px 0; scroll-margin-top: 140px; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero-wave .wave-line { animation: none; stroke-dashoffset: 0; }
+  .hero-wave .molecule { animation: none; opacity: 0.9; }
 }
 
 /* ============================================================
