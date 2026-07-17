@@ -4,3 +4,6 @@
 # OS cruft
 Thumbs.db
 .DS_Store
+
+# Full-res source photos (a web-optimized copy is served instead)
+assets/img/news/mitcep.jpeg
