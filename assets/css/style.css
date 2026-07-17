@@ -273,17 +273,20 @@ h1, h2, h3, h4 {
 .hero-wave .wave-line {
   stroke-dasharray: 2600;
   stroke-dashoffset: 2600;
+}
+/* animation replays each time .animate is toggled on (see main.js) */
+.hero-wave.animate .wave-line {
   animation: drawWave 2.6s cubic-bezier(0.6, 0, 0.2, 1) 0.3s forwards;
 }
 @keyframes drawWave { to { stroke-dashoffset: 0; } }
-.hero-wave .molecule {
-  opacity: 0;
+.hero-wave .molecule { opacity: 0; }
+.hero-wave.animate .molecule {
   animation: molIn 0.45s ease forwards;
 }
 /* delays track the wave's drawing edge as it sweeps left to right */
-.hero-wave .molecule.m1 { animation-delay: 0.8s; }
-.hero-wave .molecule.m2 { animation-delay: 1.35s; }
-.hero-wave .molecule.m3 { animation-delay: 1.75s; }
+.hero-wave.animate .molecule.m1 { animation-delay: 0.8s; }
+.hero-wave.animate .molecule.m2 { animation-delay: 1.35s; }
+.hero-wave.animate .molecule.m3 { animation-delay: 1.75s; }
 @keyframes molIn { to { opacity: 0.9; } }
 
 /* ---------- stat strip ---------- */
@@ -713,8 +716,10 @@ section { padding: 110px 0; scroll-margin-top: 140px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .hero-wave .wave-line { animation: none; stroke-dashoffset: 0; }
-  .hero-wave .molecule { animation: none; opacity: 0.9; }
+  .hero-wave .wave-line,
+  .hero-wave.animate .wave-line { animation: none; stroke-dashoffset: 0; }
+  .hero-wave .molecule,
+  .hero-wave.animate .molecule { animation: none; opacity: 0.9; }
 }
 
 /* ============================================================

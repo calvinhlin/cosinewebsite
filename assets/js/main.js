@@ -36,6 +36,20 @@ const observer = new IntersectionObserver(
 );
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
+// Replay the hero wave (and its molecules) each time it scrolls into view
+const heroWave = document.querySelector(".hero-wave");
+if (heroWave && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const waveObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        heroWave.classList.toggle("animate", entry.isIntersecting);
+      }
+    },
+    { threshold: 0.25 }
+  );
+  waveObserver.observe(heroWave);
+}
+
 // Re-anchor after all assets load: late-loading images and fonts shift
 // layout, which strands a direct #hash visit at the wrong scroll position
 window.addEventListener("load", () => {
