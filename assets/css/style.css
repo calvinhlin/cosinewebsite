@@ -270,12 +270,14 @@ h1, h2, h3, h4 {
   position: relative;
 }
 .hero-wave svg { width: 100%; height: auto; display: block; }
-.hero-wave .wave-line {
+.hero-wave .wave-line,
+.hero-wave .wave-glow {
   stroke-dasharray: 2600;
   stroke-dashoffset: 2600;
 }
 /* animation replays each time .animate is toggled on (see main.js) */
-.hero-wave.animate .wave-line {
+.hero-wave.animate .wave-line,
+.hero-wave.animate .wave-glow {
   animation: drawWave 2.6s cubic-bezier(0.6, 0, 0.2, 1) 0.3s forwards;
 }
 @keyframes drawWave { to { stroke-dashoffset: 0; } }
@@ -717,7 +719,9 @@ section { padding: 110px 0; scroll-margin-top: 140px; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero-wave .wave-line,
-  .hero-wave.animate .wave-line { animation: none; stroke-dashoffset: 0; }
+  .hero-wave .wave-glow,
+  .hero-wave.animate .wave-line,
+  .hero-wave.animate .wave-glow { animation: none; stroke-dashoffset: 0; }
   .hero-wave .molecule,
   .hero-wave.animate .molecule { animation: none; opacity: 0.9; }
 }
